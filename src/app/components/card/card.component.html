@@ -1,0 +1,41 @@
+<!--<div id="navbar-container">-->
+<!--  &lt;!&ndash;        id&ndash;&gt;-->
+<!--  <input type="text" placeholder="id" [(ngModel)]="id">-->
+<!--  &lt;!&ndash;        name&ndash;&gt;-->
+<!--  <input type="text" placeholder="ten" [(ngModel)]="ten">-->
+<!--  &lt;!&ndash;        price&ndash;&gt;-->
+<!--  <input type="text" placeholder="gia" [(ngModel)]="gia">-->
+<!--  &lt;!&ndash;        image&ndash;&gt;-->
+<!--  <input type="text" placeholder="hinh" [(ngModel)]="hinh">-->
+<!--  &lt;!&ndash;        description&ndash;&gt;-->
+<!--  <input type="text" placeholder="mo ta" [(ngModel)]="moTa">-->
+<!--  &lt;!&ndash;        quantity&ndash;&gt;-->
+<!--  <input type="text" placeholder="so luong" [(ngModel)]="soLuong">-->
+
+<button mat-flat-button (click)="shopService.themSanPham({
+            id: id,
+            ten: ten,
+            gia: gia,
+            hinh: hinh,
+            moTa: moTa,
+            soLuong: soLuong
+        })">Add
+</button>
+<button mat-flat-button (click)="shopService.xoaSanPham({
+            id: id,
+            ten: ten,
+            gia: gia,
+            hinh: hinh,
+            moTa: moTa,
+            soLuong: soLuong
+        })">Add
+</button>
+<button mat-flat-button (click)="shopService.thanhToan({
+            id: id,
+            ten: ten,
+            gia: gia,
+            hinh: hinh,
+            moTa: moTa,
+            soLuong: soLuong
+        })">Add
+</button>
