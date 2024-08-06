@@ -1,6 +1,23 @@
-<app-card></app-card>
+<button (click)="authService.login()">Dang nhap</button>
+<button (click)="authService.logout()">Dang xuat</button>
+<app-navbar></app-navbar>
 
-<app-main></app-main>
+@if (authService.user) {
+  <img src="{{authService.user.photoURL}}" alt="avatar">
+}
 
-<app-cart></app-cart>
+<div *ngIf="authService.user">
+  <p>Welcome, {{ authService.user.displayName }}</p>
+  <p>Email: {{ authService.user.email }}</p>
+</div>
+<div *ngIf="!authService.user">
+  <p>Please log in.</p>
+</div>
 
+<body>
+  @for (item of this.shopService.products; track $index) {
+    <app-card [product]="item"></app-card>
+  }
+
+<router-outlet></router-outlet>
+</body>

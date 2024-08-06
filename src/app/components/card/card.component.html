@@ -1,41 +1,14 @@
-<!--<div id="navbar-container">-->
-<!--  &lt;!&ndash;        id&ndash;&gt;-->
-<!--  <input type="text" placeholder="id" [(ngModel)]="id">-->
-<!--  &lt;!&ndash;        name&ndash;&gt;-->
-<!--  <input type="text" placeholder="ten" [(ngModel)]="ten">-->
-<!--  &lt;!&ndash;        price&ndash;&gt;-->
-<!--  <input type="text" placeholder="gia" [(ngModel)]="gia">-->
-<!--  &lt;!&ndash;        image&ndash;&gt;-->
-<!--  <input type="text" placeholder="hinh" [(ngModel)]="hinh">-->
-<!--  &lt;!&ndash;        description&ndash;&gt;-->
-<!--  <input type="text" placeholder="mo ta" [(ngModel)]="moTa">-->
-<!--  &lt;!&ndash;        quantity&ndash;&gt;-->
-<!--  <input type="text" placeholder="so luong" [(ngModel)]="soLuong">-->
+<div class="product-card">
+  <img src="{{ this.product.imageUrl }}" alt="hinh anh tam thoi">
+  <h2>{{ this.product.name }}</h2>
+  <button (click)="shopService.addToCart({
+      id: this.product.id,
+      name: this.product.name,
+      price: this.product.price,
+      quantity: 1
+    })">Them vao gio
+  </button>
+  <button [routerLink]="['/product','product/:id']">xem chi tiet</button>
 
-<button mat-flat-button (click)="shopService.themSanPham({
-            id: id,
-            ten: ten,
-            gia: gia,
-            hinh: hinh,
-            moTa: moTa,
-            soLuong: soLuong
-        })">Add
-</button>
-<button mat-flat-button (click)="shopService.xoaSanPham({
-            id: id,
-            ten: ten,
-            gia: gia,
-            hinh: hinh,
-            moTa: moTa,
-            soLuong: soLuong
-        })">Add
-</button>
-<button mat-flat-button (click)="shopService.thanhToan({
-            id: id,
-            ten: ten,
-            gia: gia,
-            hinh: hinh,
-            moTa: moTa,
-            soLuong: soLuong
-        })">Add
-</button>
+</div>
+<!--/ko dung href vi lam mat du lieu -->

@@ -1,26 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
-import { ShopService } from '../../services/shop-service.service';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
+import { ProductModel } from '../../models/sanpham.model';
+import { ShopService } from '../../services/shop.service';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [FormsModule, MatButtonModule],
+  imports: [RouterLink],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss',
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() loiChao: string = '';
-  // @Output() comGa = new EventEmitter<string>();
-
-  id: string = '';
-  ten: string = '';
-  gia: number = 0;
-  hinh: string = '';
-  soLuong: number = 0;
-  moTa: string = '';
+  @Input() product!: ProductModel;
 
   constructor(public shopService: ShopService) {}
 }

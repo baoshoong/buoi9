@@ -1,0 +1,17 @@
+#container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #3498db;
+  padding: 10px;
+}
+
+button {
+  background-color: white;
+  color: #3498db;
+  border: 1px solid #3498db;
+}
+
+button:hover {
+  background-color: #3498db;
+  color: white;
+}
